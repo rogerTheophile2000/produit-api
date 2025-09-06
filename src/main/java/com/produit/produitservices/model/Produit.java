@@ -1,11 +1,10 @@
 package com.produit.produitservices.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.io.File;
 
 @Entity
 @AllArgsConstructor
@@ -20,4 +19,8 @@ public class Produit {
     private long id;
     private String name;
     private double price;
+    private String description;
+    @OneToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 }

@@ -48,6 +48,8 @@ public class ProduitService {
         Produit updateProduit = optionalProduit.get();
         updateProduit.setName(produit.getName());
         updateProduit.setPrice(produit.getPrice());
+        updateProduit.setCategory(produit.getCategory());
+        updateProduit.setDescription(produit.getDescription());
 
         return produitRepository.save(updateProduit);
     }

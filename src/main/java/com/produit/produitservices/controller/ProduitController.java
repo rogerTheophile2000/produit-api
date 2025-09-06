@@ -14,7 +14,7 @@ import java.util.List;
 public class ProduitController {
     private final ProduitService produitService;
 
-    @GetMapping("/produits/")
+    @GetMapping("produits/")
     public List<Produit> getAllProduits(){
         return  produitService.getAllProduits();
     }
@@ -24,17 +24,17 @@ public class ProduitController {
         return produitService.createProduit(produit);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("produits/{id}")
     public Produit getProduitById(@PathVariable long id){
         return produitService.getProduitById(id);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("produits/{id}")
     public String deleteProduitById(@PathVariable("id") long idProduit){
         return produitService.deleteProduitById(idProduit);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("produits/{id}")
     public Produit updateProduitById(@PathVariable("id") long idProduit, @RequestBody Produit produit){
         return produitService.updateProduit(idProduit, produit);
     }
