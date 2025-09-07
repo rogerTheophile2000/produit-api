@@ -20,7 +20,4 @@ public class Produit {
     private String name;
     private double price;
     private String description;
-    @OneToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
 }
