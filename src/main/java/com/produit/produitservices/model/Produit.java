@@ -22,11 +22,11 @@ public class Produit {
     private double price;
     private String description;
 
-    @ManyToMany(mappedBy = "produitList")
+    @ManyToMany
     @JoinTable(
             name = "product_category",
-            joinColumns = @JoinColumn(name= "id"),
-            inverseJoinColumns = @JoinColumn(name = "id")
+            joinColumns = @JoinColumn(name= "produit_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
     )
     private List<Category> categoryList;
 }

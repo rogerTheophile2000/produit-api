@@ -20,6 +20,6 @@ public class Adress {
     private String zip;
 
     @ManyToOne
-    @JoinColumn(name="id")
+    @JoinColumn(name="person_id")
     private Person person;
 }
